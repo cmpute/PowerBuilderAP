@@ -1,0 +1,8 @@
+Save Format v3.0(19990112)
+@begin Unchecked
+@end;
+@begin Targets
+ 0 "itv6management.pbt";
+@end;
+DefaultTarget "itv6management.pbt";
+DefaultRemoteTarget "itv6management.pbt";
