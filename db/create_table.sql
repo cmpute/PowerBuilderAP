@@ -49,17 +49,17 @@ create table CHANNEL -- 电视频道信息表
   constraint CHANNELFK foreign key (staid) references STATION (staid)
 );
 
-create table BROADCAST -- 由电视节目和电视频道的联系转化而来
+create table BROADCAST --	播出时刻表
 (
-  chid CHAR(4)  not null  , -- 电视频道编号
-  pid  CHAR(12) not null  , -- 电视节目编号
-  bdtime DATE             , -- 播出时间
+  chid CHAR(4)                        not null , -- 电视频道编号
+  pid  CHAR(12)                       not null , -- 电视节目编号
+  bdtime interval day(0) to second(0) not null , -- 播出时间
   constraint BROADCASTPK  primary key (chid, pid),
   constraint BROADCASTFKC foreign key (chid) references CHANNEL (chid),
   constraint BROADCASTFKP foreign key (pid)  references PROGRAM (pid)
 );
 
-create table CHANNELCOLLECT -- 节目收藏表
+create table CHANNELCOLLECT -- 频道收藏表
 (
   chid CHAR(4) not null, -- 电视频道编号
   usid CHAR(5) not null, -- 电视频道编号
@@ -78,15 +78,15 @@ create table PRODUCING --	制作表
   constraint PRODUCINGFKP foreign key (pid) references PROGRAM (pid)
 );
 
-create table PROGRAMCOLLECT -- 频道收藏表
+create table PROGRAMCOLLECT -- 节目收藏表
 (
-  usid     CHAR(4)    not null  , -- 用户编号
+  usid     CHAR(5)    not null  , -- 用户编号
   pid      CHAR(12)   not null  , -- 电视节目编号
   reminder char(1)              , -- 是否添加系统提醒
-  constraint PROGRAMCOLLECTPK  primary key (usid, pid),
-  constraint PROGRAMCOLLECTFKU foreign key (usid) references USERS (usid),
-  constraint PROGRAMCOLLECTFKP foreign key (pid)  references PROGRAM (pid)，
-  CONSTRAINT PROGRAMCOLLECTBOOL CHECK (reminder IN ('y','n'))
+  constraint PROGRAMCOLLECTPK   primary key (usid, pid),
+  constraint PROGRAMCOLLECTFKU  foreign key (usid) references USERS (usid),
+  constraint PROGRAMCOLLECTFKP  foreign key (pid)  references PROGRAM (pid)，
+  constraint PROGRAMCOLLECTBOOL check (reminder in ('y','n'))
 );
 
 create table SCHEDULER -- 电视台调度人员表
