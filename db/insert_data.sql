@@ -14,9 +14,9 @@ VALUES ('w0003', '孙主管', 'szg', 's03', '03-JAN-2016');
 INSERT INTO WORKER (wid, wname, wpassword, staid, wtime)
 VALUES ('w0004', '李主管', 'lzg', 's03', '04-JAN-2016');
 
-INSERT INTO USERS (usid, uname, upassword) VALUES ('u0001', '学生赵', 'xsz');
-INSERT INTO USERS (usid, uname, upassword) VALUES ('u0002', '学生钱', 'xsq');
-INSERT INTO USERS (usid, uname, upassword) VALUES ('u0003', '学生孙', 'xss');
+INSERT INTO USERS (usid, uname, upassword) VALUES ('us001', '学生赵', 'xsz');
+INSERT INTO USERS (usid, uname, upassword) VALUES ('us002', '学生钱', 'xsq');
+INSERT INTO USERS (usid, uname, upassword) VALUES ('us003', '学生孙', 'xss');
 
 INSERT INTO PROGRAM (pid, pname, pepisode, pseason, pcontent, padv)
 VALUES ('p01', '新闻联播', '-1', '-1', '每日新闻播报', 'N/A');
@@ -51,14 +51,14 @@ INSERT INTO BROADCAST (chid, pid, bdtime) VALUES ('ch03', 'p06', TO_DSINTERVAL('
 INSERT INTO BROADCAST (chid, pid, bdtime) VALUES ('ch04', 'p07', TO_DSINTERVAL('0 20:30:00'));
 INSERT INTO BROADCAST (chid, pid, bdtime) VALUES ('ch01', 'p07', TO_DSINTERVAL('0 22:30:00'));
 
-INSERT INTO CHANNELCOLLECT (chid, usid) VALUES ('ch01', 'u0001');
-INSERT INTO CHANNELCOLLECT (chid, usid) VALUES ('ch02', 'u0001');
-INSERT INTO CHANNELCOLLECT (chid, usid) VALUES ('ch03', 'u0001');
-INSERT INTO CHANNELCOLLECT (chid, usid) VALUES ('ch04', 'u0002');
-INSERT INTO CHANNELCOLLECT (chid, usid) VALUES ('ch02', 'u0002');
-INSERT INTO CHANNELCOLLECT (chid, usid) VALUES ('ch03', 'u0002');
-INSERT INTO CHANNELCOLLECT (chid, usid) VALUES ('ch04', 'u0003');
-INSERT INTO CHANNELCOLLECT (chid, usid) VALUES ('ch03', 'u0003');
+INSERT INTO CHANNELCOLLECT (chid, usid) VALUES ('ch01', 'us001');
+INSERT INTO CHANNELCOLLECT (chid, usid) VALUES ('ch02', 'us001');
+INSERT INTO CHANNELCOLLECT (chid, usid) VALUES ('ch03', 'us001');
+INSERT INTO CHANNELCOLLECT (chid, usid) VALUES ('ch04', 'us002');
+INSERT INTO CHANNELCOLLECT (chid, usid) VALUES ('ch02', 'us002');
+INSERT INTO CHANNELCOLLECT (chid, usid) VALUES ('ch03', 'us002');
+INSERT INTO CHANNELCOLLECT (chid, usid) VALUES ('ch04', 'us003');
+INSERT INTO CHANNELCOLLECT (chid, usid) VALUES ('ch03', 'us003');
 
 INSERT INTO PRODUCING (wid, pid, job) VALUES ('w0001', 'p01', '监督');
 INSERT INTO PRODUCING (wid, pid, job) VALUES ('w0001', 'p02', '监督');
@@ -76,17 +76,17 @@ INSERT INTO PRODUCING (wid, pid, job) VALUES ('w0004', 'p05', '后期');
 INSERT INTO PRODUCING (wid, pid, job) VALUES ('w0004', 'p06', '后期');
 INSERT INTO PRODUCING (wid, pid, job) VALUES ('w0004', 'p07', '后期');
 
-INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('u0001', 'p01', 'y');
-INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('u0001', 'p02', 'n');
-INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('u0001', 'p03', 'n');
-INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('u0002', 'p04', 'y');
-INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('u0002', 'p05', 'y');
-INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('u0002', 'p06', 'y');
-INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('u0002', 'p07', 'y');
-INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('u0003', 'p01', 'n');
-INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('u0003', 'p03', 'y');
-INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('u0003', 'p05', 'n');
-INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('u0003', 'p07', 'y');
+INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('us001', 'p01', 'y');
+INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('us001', 'p02', 'n');
+INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('us001', 'p03', 'n');
+INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('us002', 'p04', 'y');
+INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('us002', 'p05', 'y');
+INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('us002', 'p06', 'y');
+INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('us002', 'p07', 'y');
+INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('us003', 'p01', 'n');
+INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('us003', 'p03', 'y');
+INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('us003', 'p05', 'n');
+INSERT INTO PROGRAMCOLLECT (usid, pid, reminder) VALUES ('us003', 'p07', 'y');
 
 INSERT INTO SCHEDULER (sid, sname, spassword, staid, stime)
 VALUES ('s0001', '赵调度', 'zdd', 's01', '01-JAN-2016');
