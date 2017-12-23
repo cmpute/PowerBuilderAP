@@ -5,7 +5,8 @@ create table STATION --	电视台信息表
   staid   CHAR(3)       not null  , -- 电视台编号
   staname VARCHAR2(10)            , -- 电视台名称
   staest  DATE                    , -- 电视台成立时间
-  constraint STATION primary key (staid)
+  constraint STATION  primary key (staid),
+  constraint STATIONU unique (staname)
 );
 
 create table WORKER -- 节目制作人员表
